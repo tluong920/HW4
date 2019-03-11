@@ -34,7 +34,7 @@ req.onload = function () {
     arrEmail.sort();
     let emails = "";
     if (req.status == 200) { 
-        console.log (req.responseText);
+        console.log (data);
         for(i =0; i < arrEmail.length; i++) {
             emails += arrEmail[i] + "<br>";
         }
