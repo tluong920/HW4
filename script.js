@@ -17,7 +17,7 @@ fetch('https://jsonplaceholder.typicode.com/users')
     console.log('Request succeeded', data);
     let arrUsername = data.map(a => a.username);
     arrUsername.sort((a, b) => a.length - b.length);
-    var username = ""
+    let username = ""
     for(i =0; i < arrUsername.length; i++) {
       username += arrUsername[i] + "<br>";
   }
@@ -32,7 +32,7 @@ req.onload = function () {
     const data = JSON.parse(req.response);
     let arrEmail = data.map(a => a.email);
     arrEmail.sort();
-    var txt = "";
+    let txt = "";
     if (req.status == 200) { 
         console.log (req.responseText);
         for(i =0; i < arrEmail.length; i++) {
