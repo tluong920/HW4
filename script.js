@@ -32,13 +32,13 @@ req.onload = function () {
     const data = JSON.parse(req.response);
     let arrEmail = data.map(a => a.email);
     arrEmail.sort();
-    let txt = "";
+    let emails = "";
     if (req.status == 200) { 
         console.log (req.responseText);
         for(i =0; i < arrEmail.length; i++) {
-            txt += arrEmail[i] + "<br>";
+            emails += arrEmail[i] + "<br>";
         }
-        document.getElementById("output").innerHTML = txt; 
+        document.getElementById("output").innerHTML = emails; 
     } else { 
         console.log('ERROR', req.statusText); 
     } 
