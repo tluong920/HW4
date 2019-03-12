@@ -29,12 +29,12 @@ fetch('https://jsonplaceholder.typicode.com/users')
 const req = new XMLHttpRequest(); 
 req.open('GET','https://jsonplaceholder.typicode.com/users'); 
 req.onload = function () { 
-    const data = JSON.parse(req.response);
-    let arrEmail = data.map(a => a.email);
+    const arrUser = JSON.parse(req.response);
+    let arrEmail = arrUser.map(a => a.email);
     arrEmail.sort();
     let emails = "";
     if (req.status == 200) { 
-        console.log ('Request succeeded', data);
+        console.log ('Request succeeded', arrUser);
         for(i =0; i < arrEmail.length; i++) {
             emails += arrEmail[i] + "<br>";
         }
