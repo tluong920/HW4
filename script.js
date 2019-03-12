@@ -29,7 +29,7 @@ req.onload = function () {
     let arrEmail = arrUser.map(a => a.email);
     arrEmail.sort();
     if (req.status == 200) { 
-      console.log ('Request succeeded', arrUser);
+      console.log ('Request succeeded', req.responseText);
       document.getElementById("output").innerHTML = arrEmail.join("<br>");
     } else { 
       console.log('ERROR', req.statusText); 
