@@ -17,11 +17,7 @@ fetch('https://jsonplaceholder.typicode.com/users')
     console.log('Request succeeded', data);
     let arrUsername = data.map(a => a.username);
     arrUsername.sort((a, b) => a.length - b.length);
-    let username = "";
-    for(i =0; i < arrUsername.length; i++) {
-      username += arrUsername[i] + "<br>";
-  }
-  document.getElementById("fetchdata").innerHTML = username; 
+    document.getElementById("fetchdata").innerHTML = arrUsername.join("<br>");
   }).catch(function(error) {
     console.log('Request failed', error);
   });
@@ -32,15 +28,11 @@ req.onload = function () {
     const arrUser = JSON.parse(req.response);
     let arrEmail = arrUser.map(a => a.email);
     arrEmail.sort();
-    let emails = "";
     if (req.status == 200) { 
-        console.log ('Request succeeded', arrUser);
-        for(i =0; i < arrEmail.length; i++) {
-            emails += arrEmail[i] + "<br>";
-        }
-        document.getElementById("output").innerHTML = emails; 
+      console.log ('Request succeeded', arrUser);
+      document.getElementById("output").innerHTML = arrEmail.join("<br>");
     } else { 
-        console.log('ERROR', req.statusText); 
+      console.log('ERROR', req.statusText); 
     } 
 };
 req.onerror = function () { 
