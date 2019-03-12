@@ -17,7 +17,7 @@ fetch('https://jsonplaceholder.typicode.com/users')
     console.log('Request succeeded', data);
     let arrUsername = data.map(a => a.username);
     arrUsername.sort((a, b) => a.length - b.length);
-    let username = ""
+    let username = "";
     for(i =0; i < arrUsername.length; i++) {
       username += arrUsername[i] + "<br>";
   }
